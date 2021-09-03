@@ -5,9 +5,37 @@ const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const employeeArray = [];
 
-function generateHTML() {
-    fs.writeFile('./dist/index.html', team => {
-        console.log(team);
+
+function generateHTML(formattedTeam) {
+    let teamHTML = ''
+    for(let i = 0; i < formattedTeam.length; i++) {
+        teamHTML += `<div>
+        <h2>${formattedTeam[i].getName()}</h2>
+        <h3>${formattedTeam[i].getRole()}</h3>
+        <h3>${formattedTeam[i].getId()}</h3>
+        <h3>${formattedTeam[i].getEmail()}</h3>
+        <h3>${formattedTeam[i].getSpecial()}</h3>         
+    </div>
+    `
+    }
+    let html = `<!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <title>Team Generator</title>
+    </head>
+    <body>
+        <div class="header">
+            <h1 class="title">My Team<h1>
+        </div>
+        ${teamHTML}    
+    </body>
+    </html>`
+    fs.writeFile('./dist/index.html', html, err => {
+        if(err) throw err;
     });
 }
 
@@ -26,8 +54,8 @@ function promptNewEmployee() {
                 createNewIntern();
                 break;
             case 'No thanks':
-                console.log(employeeArray);
                 console.log('Generating HTML...');
+                generateHTML(employeeArray);
         }
     })
 }
