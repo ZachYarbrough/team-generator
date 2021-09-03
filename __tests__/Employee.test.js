@@ -33,3 +33,7 @@ test('should return the id of the Employee', () => {
 test('should return the email of the Employee', () => {
     expect(employee.getEmail()).toBe('zachyarbro@gmail.com');
 });
+
+test('should return employee', () => {
+    expect(employee.getRole()).toBe('Employee');
+})

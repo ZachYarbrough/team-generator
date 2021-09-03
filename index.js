@@ -1,6 +1,8 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 const Manager = require('./lib/Manager');
+const Engineer = require('./lib/Engineer');
+const Intern = require('./lib/Intern');
 const employeeArray = [];
 
 function generateHTML() {
@@ -71,7 +73,7 @@ function createNewEngineer() {
         name: "github",
         message: "What is their github username?"
     }]).then(engineer => {
-        employeeArray.push(engineer);
+        employeeArray.push(new Engineer(engineer.name, engineer.id, engineer.email, engineer.github));
         promptNewEmployee();  
     })
 }
@@ -94,7 +96,7 @@ function createNewIntern() {
         name: "school",
         message: "What is school do they attend?"
     }]).then(intern => {
-        employeeArray.push(intern);
+        employeeArray.push(new Intern(intern.name, intern.id, intern.email, intern.school));
         promptNewEmployee();
     })
 }
