@@ -10,11 +10,15 @@ function generateHTML(formattedTeam) {
     let teamHTML = ''
     for(let i = 0; i < formattedTeam.length; i++) {
         teamHTML += `<div>
-        <h2>${formattedTeam[i].getName()}</h2>
-        <h3>${formattedTeam[i].getRole()}</h3>
-        <h3>${formattedTeam[i].getId()}</h3>
-        <h3>${formattedTeam[i].getEmail()}</h3>
-        <h3>${formattedTeam[i].getSpecial()}</h3>         
+        <div class="employee-header">
+            <h2>${formattedTeam[i].getName()}</h2>
+            <h3>${formattedTeam[i].getRole()}</h3>
+        </div>
+        <div class="employee-content">
+            <h3>${formattedTeam[i].getId()}</h3>
+            <h3>${formattedTeam[i].getEmail()}</h3>
+            <h3>${formattedTeam[i].getSpecial()}</h3>
+        </div>         
     </div>
     `
     }
@@ -31,7 +35,9 @@ function generateHTML(formattedTeam) {
         <div class="header">
             <h1 class="title">My Team<h1>
         </div>
-        ${teamHTML}    
+        <div class="employee-container>
+            ${teamHTML}
+        </div>    
     </body>
     </html>`
     fs.writeFile('./dist/index.html', html, err => {
