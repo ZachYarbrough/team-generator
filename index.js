@@ -13,7 +13,7 @@ function generateHTML(team) {
     team.forEach(employee => {
         teamHTML += `
         <div class="col-4 d-flex flex-column mb-3">
-            <div class="bg-primary text-white p-3">
+            <div class="bg-primary text-white shadow p-3">
                 <h2>${employee.getName()}</h2>
                 <h3>${employee.getRole()}</h3>
             </div>
