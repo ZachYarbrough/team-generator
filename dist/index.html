@@ -5,45 +5,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <title>Team Generator</title>
     </head>
     <body>
-        <div class="header">
-            <h1 class="title">My Team<h1>
-        </div>
-        <div>
-        <div class="employee-header">
-            <h2>Zach</h2>
-            <h3><i class="fas fa-coffee"></i> Manager</h3>
-        </div>
-        <div class="employee-content">
-            <h3>ID: 1</h3>
-            <h3>Email: <a href="mailto:zachyarbro@gmail.com">zachyarbro@gmail.com</a></h3>
-            <h3>Office Number: 1234</h3>
-        </div>         
-    </div>
-    <div>
-        <div class="employee-header">
-            <h2>Bert</h2>
-            <h3><i class="fas fa-glasses"></i> Engineer</h3>
-        </div>
-        <div class="employee-content">
-            <h3>ID: 2</h3>
-            <h3>Email: <a href="mailto:bert@gmail.com">bert@gmail.com</a></h3>
-            <h3>GitHub: <a href="https://github.com/Bert">Bert</a></h3>
-        </div>         
-    </div>
-    <div>
-        <div class="employee-header">
-            <h2>Sarah</h2>
-            <h3><i class="fas fa-user-graduate"></i> Intern</h3>
-        </div>
-        <div class="employee-content">
-            <h3>ID: 3</h3>
-            <h3>Email: <a href="mailto:sarah@github.com">sarah@github.com</a></h3>
-            <h3>School: University of Texas</h3>
-        </div>         
-    </div>
+    <div class="container">
+    <h1 class="mt-3 d-flex align-items-center justify-content-center p-5 bg-danger text-white">
+        My Team
+    </h1>
+    <div class="row mt-5 d-flex justify-content-center">
         
+        <div class="col-4 d-flex flex-column mb-3">
+            <div class="bg-primary text-white p-3">
+                <h2>Zach</h2>
+                <h3><i class="fas fa-mug-hot"></i> Manager</h3>
+            </div>
+            <div class="bg-light shadow p-3">
+                <h4 class="bg-white p-3 mb-3">ID: 1</h4>
+                <h4 class="bg-white p-3 mb-3">Email: <a href="mailto:zachyarbro@gmail.com">zachyarbro@gmail.com</a></h4>
+                <h4 class="bg-white p-3 mb-3">Office Number: 1234</h4>
+            </div>
+        </div>
+        <div class="col-4 d-flex flex-column mb-3">
+            <div class="bg-primary text-white p-3">
+                <h2>Bert</h2>
+                <h3><i class="fas fa-glasses"></i> Engineer</h3>
+            </div>
+            <div class="bg-light shadow p-3">
+                <h4 class="bg-white p-3 mb-3">ID: 2</h4>
+                <h4 class="bg-white p-3 mb-3">Email: <a href="mailto:bert@gmail.com">bert@gmail.com</a></h4>
+                <h4 class="bg-white p-3 mb-3">GitHub: <a href="https://github.com/BertHub">BertHub</a></h4>
+            </div>
+        </div>
+        <div class="col-4 d-flex flex-column mb-3">
+            <div class="bg-primary text-white p-3">
+                <h2>Sarah</h2>
+                <h3><i class="fas fa-user-graduate"></i> Intern</h3>
+            </div>
+            <div class="bg-light shadow p-3">
+                <h4 class="bg-white p-3 mb-3">ID: 3</h4>
+                <h4 class="bg-white p-3 mb-3">Email: <a href="mailto:sarah@gmail.com">sarah@gmail.com</a></h4>
+                <h4 class="bg-white p-3 mb-3">School: University of Texas</h4>
+            </div>
+        </div>
+    </div>
+</div>  
     </body>
     </html>

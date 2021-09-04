@@ -6,22 +6,25 @@ const Intern = require('./lib/Intern');
 const employeeArray = [];
 
 
-function generateHTML(formattedTeam) {
-    let teamHTML = ''
-    for(let i = 0; i < formattedTeam.length; i++) {
-        teamHTML += `<div>
-        <div class="employee-header">
-            <h2>${formattedTeam[i].getName()}</h2>
-            <h3>${formattedTeam[i].getRole()}</h3>
-        </div>
-        <div class="employee-content">
-            <h3>${formattedTeam[i].getId()}</h3>
-            <h3>${formattedTeam[i].getEmail()}</h3>
-            <h3>${formattedTeam[i].getSpecial()}</h3>
-        </div>         
-    </div>
-    `
-    }
+function generateHTML(team) {
+
+    let teamHTML = '';
+
+    team.forEach(employee => {
+        teamHTML += `
+        <div class="col-4 d-flex flex-column mb-3">
+            <div class="bg-primary text-white p-3">
+                <h2>${employee.getName()}</h2>
+                <h3>${employee.getRole()}</h3>
+            </div>
+            <div class="bg-light shadow p-3">
+                <h4 class="bg-white p-3 mb-3">ID: ${employee.getId()}</h4>
+                <h4 class="bg-white p-3 mb-3">Email: <a href="mailto:${employee.getEmail()}">${employee.getEmail()}</a></h4>
+                <h4 class="bg-white p-3 mb-3">${employee.getSpecial()}</h4>
+            </div>
+        </div>`
+    });
+
     let html = `<!DOCTYPE html>
     <html lang="en">
     <head>
@@ -29,15 +32,19 @@ function generateHTML(formattedTeam) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <title>Team Generator</title>
     </head>
     <body>
-        <div class="header">
-            <h1 class="title">My Team<h1>
-        </div>
-        <div class="employee-container>
-            ${teamHTML}
-        </div>    
+    <div class="container">
+    <h1 class="mt-3 d-flex align-items-center justify-content-center p-5 bg-danger text-white">
+        My Team
+    </h1>
+    <div class="row mt-5 d-flex justify-content-center">
+        ${teamHTML}
+    </div>
+</div>  
     </body>
     </html>`
     fs.writeFile('./dist/index.html', html, err => {
