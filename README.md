@@ -1,6 +1,6 @@
 # Team Generator
 
-Generates an html page of employees based on commmand line prompts using [inquirer](https://www.npmjs.com/package/inquirer).
+Generates an html page of employees based on command line prompts using [inquirer](https://www.npmjs.com/package/inquirer).
 
 ## Installation
 ```
