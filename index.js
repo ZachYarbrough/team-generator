@@ -135,7 +135,7 @@ function createNewIntern() {
     }, {
         type: "text",
         name: "school",
-        message: "What is school do they attend?"
+        message: "What school do they attend?"
     }]).then(intern => {
         employeeArray.push(new Intern(intern.name, intern.id, intern.email, intern.school));
         promptNewEmployee();
